@@ -5,7 +5,7 @@
       Subscribe to our social networks to be the first to know about news and
       updates
     </p>
-    <div class="blog-content">
+    <div class="blog-content container">
       <div class="titles desktop">
         <h2 class="blog-title">Our blog</h2>
         <h4 class="blog-subtitle">
@@ -79,8 +79,8 @@ const blogItems = [
       width: 315px;
       position: absolute;
       z-index: 99;
-      top: 20px;
-      left: 90px;
+      top: 21px;
+      left: -71px;
     }
     .blog-title {
       @media screen and (min-width: 1440px) {

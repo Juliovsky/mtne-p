@@ -164,6 +164,8 @@ a {
 }
 #locale-select {
   border: none !important;
+  background-color: transparent;
+  color: $main-blue;
   text-transform: uppercase;
   font-family: Heebo;
   font-size: 15px;

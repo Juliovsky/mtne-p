@@ -7,7 +7,7 @@
         your contact details and a request in the form.
       </p>
       <div class="contacts desktop">
-        <div class="subContent">
+        <div class="subContent container">
           <ul>
             <li v-for="item in contactData" class="subContent-item">
               <img :src="item.icon" />
@@ -91,11 +91,16 @@ ul .subContent-item:last-child {
   margin: 120px auto;
   max-width: 320px;
   @media screen and (min-width: 768px) {
-    width: 62%;
-    max-width: 450px;
-    display: block;
-    margin: 120px auto 0 auto;
+    width: 450px;
+    max-width: 100%;
+    margin: 120px auto;
   }
+  @media screen and (min-width: 1440px) {
+    width: 1110px;
+    max-width: 1110px;
+    margin: 160px auto;
+  }
+
   .item-link {
     @media screen and (min-width: 1440px) {
       font-size: 15px;
@@ -122,6 +127,9 @@ ul .subContent-item:last-child {
     }
     .btn {
       margin: 30px 0 0 0;
+      @media screen and (min-width: 768px) {
+        margin: 30px auto 0 auto;
+      }
       @media screen and (min-width: 1440px) {
         margin: 30px auto 0 0;
       }

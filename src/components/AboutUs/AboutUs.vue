@@ -197,6 +197,9 @@ const servicesFor = [
       flex-direction: column;
       width: 48%;
     }
+    @media screen and (min-width: 1920px) {
+      width: 75%;
+    }
   }
 }
 </style>

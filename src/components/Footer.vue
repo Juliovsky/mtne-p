@@ -1,7 +1,12 @@
 <template>
   <div id="footer">
     <img src="@/assets/logo.svg" class="logo mobile tablet" />
-    <img src="@/assets/logo-full.png" alt="logo" class="logo desktop" />
+    <img
+      src="@/assets/logo-full.png"
+      alt="logo"
+      class="logo desktop"
+      width="182"
+    />
     <ul class="contacts-list container">
       <li class="contacts-item" v-for="icon in socialSites">
         <a :href="icon.link">

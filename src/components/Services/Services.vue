@@ -152,6 +152,7 @@ const services = [
     }
     @media screen and (min-width: 1440px) {
       margin-top: 160px;
+      padding: 38px 0;
     }
   }
 
@@ -178,6 +179,7 @@ const services = [
       @media screen and (min-width: 768px) {
         padding: 30px 13px;
         margin-top: 0;
+        width: 33.3%;
       }
       @media screen and (min-width: 1440px) {
         padding: 60px 58px 30px 35px;
@@ -217,7 +219,9 @@ const services = [
     }
 
     .serviceList-item:nth-child(even) {
-      border-right: 1px solid $main-blue;
+      @media screen and (min-width: 768px) {
+        border-right: 1px solid $main-blue;
+      }
     }
 
     .serviceList-item:nth-child(even) .content {
