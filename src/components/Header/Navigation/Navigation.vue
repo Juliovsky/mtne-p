@@ -1,6 +1,14 @@
 <template>
   <div class="centered">
     <nav class="navigation">
+      <select
+        id="locale-select"
+        v-model="$i18n.locale"
+        class="focus:border-baseGreen ml-5 block w-full rounded-lg border border-gray-300 bg-gray-50 p-1 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+      >
+        <option value="en">{{ $t("english") }}</option>
+        <option value="esp">{{ $t("spanish") }}</option>
+      </select>
       <ul class="nav-list">
         <li
           v-for="navItem in navigationList"
@@ -12,12 +20,9 @@
             <a
               :href="navItem.href"
               class="text"
-              v-smooth-scroll="{
-                duration: 1000,
-                offset: -50,
-                container: '#container',
-              }"
-              >{{ navItem.name }}</a
+              v-smooth-scroll
+              @click="onItemChanged"
+              >{{ $t(navItem.name) }}</a
             >
             <img
               src="@/assets/icons/arrow.svg"
@@ -48,10 +53,10 @@
 import { ref } from "vue";
 
 const navigationList = [
-  { name: "Services", href: "#services", isExtraInfo: false },
-  { name: "About us", href: "#about", isExtraInfo: false },
+  { name: "services", href: "#serviceItems", isExtraInfo: false },
+  { name: "aboutUs", href: "#about", isExtraInfo: false },
   {
-    name: "Contact us",
+    name: "contactUs",
     href: "#contact",
     isExtraInfo: true,
     extraContent: [
@@ -64,9 +69,13 @@ const navigationList = [
       { icon: require("@/assets/icons/location.svg"), text: "Location", id: 3 },
     ],
   },
-  { name: "Feedbacks", href: "#feedbacks", isExtraInfo: false },
-  { name: "Our blog", href: "#blog", isExtraInfo: false },
+  { name: "feedbacks", href: "#feedbacks", isExtraInfo: false },
+  { name: "ourBlog", href: "#blog", isExtraInfo: false },
 ];
+const onItemChanged = function () {
+  document.querySelector("body").classList.remove("bm-overlay");
+  document.querySelector(".bm-menu").style.width = 0;
+};
 const isArrowOpen = ref(false);
 const openSubMenu = function (isExtra) {
   if (isExtra) {
