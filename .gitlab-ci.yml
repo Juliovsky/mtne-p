@@ -1,15 +1,15 @@
-pages: # задание должно быть именованными страницами
+pages: # the job must be named pages
   image: node:latest
   stage: deploy
   script:
     - npm ci
     - npm run build
-    - mv public public-vue # GitLab Pages хук для каталога public
-    - mv dist public # переименование каталога dist (результат команды npm run build)
-    # опционально, можно активировать поддержку gzip с помощью следующей строки:
+    - mv public public-vue # GitLab Pages hooks on the public folder
+    - mv dist public # rename the dist folder (result of npm run build)
+    # optionally, you can activate gzip support with the following line:
     - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;
   artifacts:
     paths:
-      - public # путь к артефакту должен быть /public для GitLab Pages
+      - public # artifact path must be /public for GitLab Pages to pick it up
   only:
     - master
