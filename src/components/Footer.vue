@@ -27,7 +27,7 @@
         </li>
       </ul>
     </div>
-    <p class="subtext"> All rights reserved</p>
+    <p class="subtext"> All  rights reserved</p>
   </div>
 </template>
 
